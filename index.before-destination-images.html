@@ -393,34 +393,38 @@
 
 
     /* =========================================================
-       HERO — DESKTOP DESIGN TARGET
+       HERO
        ========================================================= */
+
     .hero {
       position: relative;
+
       min-height: 720px;
+
       display: flex;
       align-items: center;
+
       overflow: hidden;
 
       background:
         linear-gradient(
           90deg,
-          rgba(6,31,70,.97) 0%,
-          rgba(6,31,70,.91) 24%,
-          rgba(6,31,70,.72) 42%,
-          rgba(6,31,70,.38) 58%,
-          rgba(6,31,70,.10) 72%,
-          rgba(6,31,70,0) 84%
+          rgba(6,31,70,.93) 0%,
+          rgba(6,31,70,.80) 37%,
+          rgba(6,31,70,.30) 72%,
+          rgba(6,31,70,.13) 100%
         ),
         url("images/nick-hero.png")
-        center center / cover no-repeat;
+        center 25% / cover no-repeat;
     }
 
     .hero::after {
       content: "";
+
       position: absolute;
       inset: auto 0 0;
-      height: 130px;
+
+      height: 140px;
 
       background:
         linear-gradient(
@@ -437,19 +441,12 @@
 
       width: 100%;
 
-      display: grid;
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(390px, .88fr);
-
-      align-items: center;
-      gap: clamp(38px, 5vw, 78px);
-
-      padding: 88px 0 92px;
+      padding: 110px 0 95px;
     }
 
     .hero-copy {
-      max-width: 690px;
+      max-width: 760px;
+
       color: var(--white);
     }
 
@@ -462,9 +459,10 @@
         serif;
 
       font-size:
-        clamp(3.1rem, 6.2vw, 5.9rem);
+        clamp(3.1rem, 7vw, 6.2rem);
 
       line-height: .96;
+
       letter-spacing: -.045em;
     }
 
@@ -475,12 +473,11 @@
     }
 
     .hero-copy p {
-      max-width: 650px;
+      max-width: 670px;
 
-      color: rgba(255,255,255,.92);
+      color: rgba(255,255,255,.90);
 
       font-size: 1.1rem;
-      line-height: 1.6;
     }
 
     .hero-buttons {
@@ -495,90 +492,18 @@
       max-width: 540px;
 
       margin-top: 26px;
+
       padding: 15px 18px;
 
       border-left: 3px solid var(--orange);
+
+      background: rgba(0,0,0,.20);
+
       border-radius: 8px;
 
-      background: rgba(3,24,54,.72);
-
-      color: rgba(255,255,255,.82);
+      color: rgba(255,255,255,.79);
 
       font-size: .82rem;
-      line-height: 1.55;
-    }
-
-    /* ---------------------------------------------------------
-       HERO PHOTOGRAPHIC FRAME
-       --------------------------------------------------------- */
-
-    .hero-visual {
-      position: relative;
-
-      width: 100%;
-      min-width: 0;
-
-      padding: 18px 28px 42px 0;
-      box-sizing: border-box;
-    }
-
-    .hero-photo {
-      width: 100%;
-      height: 610px;
-
-      border-radius: 28px;
-
-      background:
-        linear-gradient(
-          180deg,
-          rgba(255,255,255,.02),
-          rgba(6,31,70,.04)
-        ),
-        url("images/nick-hero.png")
-        center 25% / cover no-repeat;
-
-      box-shadow: var(--shadow-md);
-    }
-
-    .hero-floating-card {
-      position: absolute;
-
-      right: -6px;
-      bottom: 0;
-
-      width: min(265px, 72%);
-
-      padding: 20px 22px;
-
-      box-sizing: border-box;
-
-      border-radius: 14px;
-
-      background: var(--white);
-      box-shadow: var(--shadow-md);
-
-      color: var(--navy);
-    }
-
-    .hero-floating-card strong {
-      display: block;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size: 1.18rem;
-    }
-
-    .hero-floating-card span {
-      display: block;
-
-      margin-top: 7px;
-
-      color: var(--muted);
-      font-size: .78rem;
-      line-height: 1.5;
     }
 
 
@@ -1261,7 +1186,7 @@
     }
 
     .payment-header p {
-      max-width: 700px;
+      max-width: 760px;
 
       color: rgba(255,255,255,.73);
     }
@@ -2059,6 +1984,7 @@
         with the people who matter most.
       </p>
 
+
       <div class="hero-buttons">
 
         <a
@@ -2077,6 +2003,7 @@
 
       </div>
 
+
       <div class="hero-message">
 
         Family reunions. Couples' getaways. Destination weddings.
@@ -2085,24 +2012,6 @@
         <strong>
           Whatever the journey, Huddle Up.
         </strong>
-
-      </div>
-
-    </div>
-
-    <div class="hero-visual">
-
-      <div class="hero-photo" role="img" aria-label="Huddle Up N Travel destination travel image"></div>
-
-      <div class="hero-floating-card">
-
-        <strong>Let's Travel Together</strong>
-
-        <span>
-          Gather your people.
-          Choose your destination.
-          Make the memories.
-        </span>
 
       </div>
 
@@ -2662,7 +2571,8 @@
         <div
           class="trip-image"
           style="
-            background-image: url('images/Paris.png');
+            background-image:
+            url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1000&q=85');
           "
         ></div>
 
@@ -2718,7 +2628,8 @@
         <div
           class="trip-image"
           style="
-            background-image: url('images/Amsterdam.png');
+            background-image:
+            url('https://images.unsplash.com/photo-1534351590666-13e3e96b5017?auto=format&fit=crop&w=1000&q=85');
           "
         ></div>
 
@@ -2774,7 +2685,8 @@
         <div
           class="trip-image"
           style="
-            background-image: url('images/Negril.png');
+            background-image:
+            url('images/new-trip-visual-reference.png');
           "
         ></div>
 
@@ -2829,7 +2741,8 @@
         <div
           class="trip-image"
           style="
-            background-image: url('images/Ocho Rios.png');
+            background-image:
+            url('images/nick-hero.png');
           "
         ></div>
 
@@ -2888,7 +2801,8 @@
         <div
           class="trip-image"
           style="
-            background-image: url('images/Valiant Lady.png');
+            background-image:
+            url('https://images.unsplash.com/photo-1540946485063-a40da27545f8?auto=format&fit=crop&w=1000&q=85');
           "
         ></div>
 
@@ -2944,7 +2858,8 @@
         <div
           class="trip-image"
           style="
-            background-image: url('images/Caribbean Cruise.png');
+            background-image:
+            url('images/new-trip-visual-reference.png');
           "
         ></div>
 
@@ -3002,7 +2917,8 @@
         <div
           class="trip-image"
           style="
-            background-image: url('images/Japan.png');
+            background-image:
+            url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1000&q=85');
           "
         ></div>
 
@@ -3075,107 +2991,7 @@
     <div class="feature-grid">
 
 
-      <div
-  class="feature-image"
-  style="
-    position:relative;
-    min-height:620px;
-    overflow:hidden;
-    border-radius:24px 0 0 24px;
-    background:
-      linear-gradient(
-        180deg,
-        rgba(6,31,70,.02) 0%,
-        rgba(6,31,70,.10) 40%,
-        rgba(6,31,70,.82) 100%
-      ),
-      url('images/Negril.png') center center / cover no-repeat;
-  "
->
-
-  <div style="
-    position:absolute;
-    top:28px;
-    left:28px;
-    padding:10px 17px;
-    border-radius:999px;
-    background:#F47C20;
-    color:#fff;
-    font-family:Arial,sans-serif;
-    font-size:12px;
-    font-weight:800;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    box-shadow:0 8px 24px rgba(0,0,0,.22);
-  ">
-    Featured Experience
-  </div>
-
-  <div style="
-    position:absolute;
-    left:32px;
-    right:32px;
-    bottom:32px;
-    color:#fff;
-  ">
-
-    <div style="
-      font-family:Arial,sans-serif;
-      font-size:13px;
-      font-weight:800;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      margin-bottom:8px;
-    ">
-      Jamaica • June 1–5, 2027
-    </div>
-
-    <div style="
-      font-family:Georgia,'Times New Roman',serif;
-      font-size:clamp(3rem,6vw,5.5rem);
-      line-height:.9;
-      font-weight:700;
-      margin-bottom:20px;
-    ">
-      Negril
-    </div>
-
-    <div style="
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 18px;
-      border-radius:12px;
-      background:rgba(255,255,255,.96);
-      color:#061F46;
-      font-family:Arial,sans-serif;
-      font-size:14px;
-      font-weight:800;
-      box-shadow:0 8px 25px rgba(0,0,0,.20);
-    ">
-      <span style="
-        color:#F47C20;
-        font-size:22px;
-        font-weight:900;
-      ">$100</span>
-      Non-Refundable Deposit
-    </div>
-
-    <div style="
-      margin-top:14px;
-      font-family:Arial,sans-serif;
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      opacity:.92;
-    ">
-      5 Days • Resort Experience • Huddle Up N Travel
-    </div>
-
-  </div>
-
-</div>
+      <div class="feature-image"></div>
 
 
       <div class="feature-copy">

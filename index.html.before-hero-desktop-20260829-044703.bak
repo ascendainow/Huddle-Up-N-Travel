@@ -393,41 +393,25 @@
 
 
     /* =========================================================
-       HERO — DESKTOP DESIGN TARGET
+       HERO
        ========================================================= */
+
     .hero {
       position: relative;
-      min-height: 720px;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(6,31,70,.97) 0%,
-          rgba(6,31,70,.91) 24%,
-          rgba(6,31,70,.72) 42%,
-          rgba(6,31,70,.38) 58%,
-          rgba(6,31,70,.10) 72%,
-          rgba(6,31,70,0) 84%
-        ),
-        url("images/nick-hero.png")
-        center center / cover no-repeat;
+      overflow: visible;
+      background: var(--navy);
     }
 
     .hero::after {
       content: "";
       position: absolute;
       inset: auto 0 0;
-      height: 130px;
-
+      height: 110px;
       background:
         linear-gradient(
           transparent,
-          rgba(6,31,70,.28)
+          rgba(6,31,70,.22)
         );
-
       pointer-events: none;
     }
 
@@ -445,7 +429,8 @@
       align-items: center;
       gap: clamp(38px, 5vw, 78px);
 
-      padding: 88px 0 92px;
+      padding: clamp(68px, 7vw, 105px) 0
+               clamp(82px, 7vw, 100px);
     }
 
     .hero-copy {
@@ -476,9 +461,7 @@
 
     .hero-copy p {
       max-width: 650px;
-
-      color: rgba(255,255,255,.92);
-
+      color: rgba(255,255,255,.90);
       font-size: 1.1rem;
       line-height: 1.6;
     }
@@ -487,7 +470,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 13px;
-
       margin-top: 30px;
     }
 
@@ -498,18 +480,16 @@
       padding: 15px 18px;
 
       border-left: 3px solid var(--orange);
+      background: rgba(0,0,0,.20);
       border-radius: 8px;
 
-      background: rgba(3,24,54,.72);
-
-      color: rgba(255,255,255,.82);
-
+      color: rgba(255,255,255,.79);
       font-size: .82rem;
       line-height: 1.55;
     }
 
     /* ---------------------------------------------------------
-       HERO PHOTOGRAPHIC FRAME
+       HERO VISUAL
        --------------------------------------------------------- */
 
     .hero-visual {
@@ -524,16 +504,11 @@
 
     .hero-photo {
       width: 100%;
-      height: 610px;
+      height: clamp(470px, 43vw, 610px);
 
       border-radius: 28px;
 
       background:
-        linear-gradient(
-          180deg,
-          rgba(255,255,255,.02),
-          rgba(6,31,70,.04)
-        ),
         url("images/nick-hero.png")
         center 25% / cover no-repeat;
 
@@ -573,7 +548,6 @@
 
     .hero-floating-card span {
       display: block;
-
       margin-top: 7px;
 
       color: var(--muted);
@@ -581,6 +555,112 @@
       line-height: 1.5;
     }
 
+    /* ---------------------------------------------------------
+       HERO TABLET
+       --------------------------------------------------------- */
+
+    @media (max-width: 950px) {
+
+      .hero-inner {
+        grid-template-columns:
+          minmax(0, 1fr)
+          minmax(320px, .82fr);
+
+        gap: 32px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.8rem, 7vw, 4.8rem);
+      }
+
+      .hero-photo {
+        height: 500px;
+      }
+
+      .hero-visual {
+        padding-right: 18px;
+      }
+    }
+
+    /* ---------------------------------------------------------
+       HERO MOBILE
+       --------------------------------------------------------- */
+
+    @media (max-width: 720px) {
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 34px;
+
+        padding-top: 58px;
+        padding-bottom: 82px;
+      }
+
+      .hero-copy {
+        max-width: 680px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.7rem, 11vw, 4.2rem);
+      }
+
+      .hero-copy p {
+        font-size: 1rem;
+      }
+
+      .hero-visual {
+        width: min(100%, 650px);
+        margin: 0 auto;
+        padding: 0 18px 48px 0;
+      }
+
+      .hero-photo {
+        height: min(105vw, 520px);
+        min-height: 390px;
+        border-radius: 22px;
+      }
+
+      .hero-floating-card {
+        right: 0;
+        bottom: 0;
+        width: min(250px, 76%);
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .hero-inner {
+        padding-top: 46px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.4rem, 12vw, 3.35rem);
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-buttons .button {
+        width: 100%;
+      }
+
+      .hero-visual {
+        padding-right: 8px;
+        padding-bottom: 58px;
+      }
+
+      .hero-photo {
+        height: 110vw;
+        min-height: 350px;
+      }
+
+      .hero-floating-card {
+        right: 0;
+        width: min(235px, 82%);
+      }
+    }
 
     /* =========================================================
        QUICK VALUE STRIP
@@ -1261,7 +1341,7 @@
     }
 
     .payment-header p {
-      max-width: 700px;
+      max-width: 760px;
 
       color: rgba(255,255,255,.73);
     }
