@@ -249,9 +249,30 @@ select {
   background-position: center;
 }
 
+.hero-inner {
+  position: relative;
+  z-index: 2;
 
+  min-height: 760px;
 
+  display: grid;
 
+  grid-template-columns:
+    minmax(0,1.03fr)
+    minmax(430px,.85fr);
+
+  align-items: center;
+
+  gap: 70px;
+
+  padding: 72px 0 88px;
+}
+
+.hero-copy {
+  max-width: 700px;
+
+  color: var(--white);
+}
 
 .hero h1 {
   margin: 16px 0 22px;
@@ -814,7 +835,14 @@ select {
    2027 TRIPS
    ========================================================= */
 
+.trips-grid {
+  display: grid;
 
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap: 22px;
+}
 
 .trip {
   overflow: hidden;
@@ -1069,7 +1097,13 @@ select {
     gap: 14px;
   }
 
-  
+  .hero-inner {
+    grid-template-columns:
+      1fr
+      .82fr;
+
+    gap: 36px;
+  }
 
   .hero h1 {
     font-size:
@@ -1099,7 +1133,10 @@ select {
     grid-column: 1 / span 2;
   }
 
-  
+  .trips-grid {
+    grid-template-columns:
+      repeat(2,1fr);
+  }
 
 }
 
@@ -1135,7 +1172,19 @@ select {
     min-height: auto;
   }
 
-  
+  .hero-inner {
+    min-height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 36px;
+
+    padding:
+      58px
+      0
+      80px;
+  }
 
   .hero h1 {
     font-size:
@@ -1177,7 +1226,9 @@ select {
   }
 
   .experience-grid,
-  
+  .trips-grid {
+    grid-template-columns: 1fr;
+  }
 
   .split {
     grid-template-columns: 1fr;
@@ -1217,309 +1268,6 @@ select {
     flex-direction: column;
   }
 
-}
-
-
-/* ============================================================
-   HUDDLE UP N TRAVEL — DESKTOP MASTER
-   Underlying design rules. No patch/override layer.
-   ============================================================ */
-
-.hero {
-  position: relative;
-  min-height: 720px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background: #061f46;
-}
-
-.hero-background {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(6,31,70,.96) 0%,
-      rgba(6,31,70,.86) 23%,
-      rgba(6,31,70,.52) 47%,
-      rgba(6,31,70,.18) 68%,
-      rgba(6,31,70,0) 88%
-    ),
-    url("images/Negril.png") center / cover no-repeat;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  min-height: 720px;
-  display: grid;
-  grid-template-columns: minmax(0,1fr) minmax(400px,.78fr);
-  gap: 60px;
-  align-items: center;
-  padding: 78px 0 92px;
-}
-
-.hero-copy {
-  max-width: 690px;
-  color: #fff;
-}
-
-.hero-copy h1 {
-  margin: 13px 0 22px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.3rem, 6vw, 5.9rem);
-  line-height: .94;
-  letter-spacing: -.045em;
-}
-
-.hero-copy h1 em {
-  color: var(--orange);
-  font-style: normal;
-  font-weight: 400;
-}
-
-.hero-copy > p {
-  max-width: 650px;
-  color: rgba(255,255,255,.92);
-  font-size: 1.08rem;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 13px;
-  margin-top: 29px;
-}
-
-.hero-message {
-  max-width: 540px;
-  margin-top: 25px;
-  padding: 15px 18px;
-  border-left: 3px solid var(--orange);
-  border-radius: 0 8px 8px 0;
-  background: rgba(3,24,54,.68);
-  color: rgba(255,255,255,.82);
-  font-size: .81rem;
-}
-
-.hero-visual {
-  position: relative;
-  min-height: 610px;
-  padding: 12px 24px 38px 0;
-}
-
-.hero-photo {
-  height: 590px;
-  overflow: hidden;
-  border-radius: 28px;
-  box-shadow: 0 30px 80px rgba(0,0,0,.30);
-}
-
-.hero-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
-}
-
-.hero-card {
-  position: absolute;
-  right: -4px;
-  bottom: 0;
-  width: 285px;
-  padding: 21px 23px;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 18px 55px rgba(0,0,0,.22);
-  color: var(--navy);
-}
-
-.hero-card-label {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--orange);
-  font-size: .62rem;
-  font-weight: 900;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-
-.hero-card strong {
-  display: block;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.32rem;
-  line-height: 1.08;
-}
-
-.hero-card p {
-  margin: 9px 0 0;
-  color: var(--muted);
-  font-size: .75rem;
-}
-
-/* ============================================================
-   2027 TRIP COLLECTION
-   ============================================================ */
-
-.trips-grid {
-  display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 24px;
-}
-
-.trip-card {
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: #fff;
-  box-shadow: 0 12px 38px rgba(6,31,70,.07);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-
-.trip-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 46px rgba(6,31,70,.13);
-}
-
-.trip-image {
-  position: relative;
-  height: 235px;
-  overflow: hidden;
-  background: var(--navy);
-}
-
-.trip-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.trip-status {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  padding: 6px 9px;
-  border-radius: 5px;
-  background: rgba(255,255,255,.94);
-  color: var(--navy);
-  font-size: .59rem;
-  font-weight: 900;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.trip-status.sold {
-  background: var(--navy);
-  color: #fff;
-}
-
-.trip-body {
-  padding: 23px 23px 25px;
-}
-
-.trip-date {
-  color: var(--orange);
-  font-size: .64rem;
-  font-weight: 900;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
-.trip-body h3 {
-  margin: 7px 0 8px;
-  color: var(--navy);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.58rem;
-  line-height: 1.05;
-}
-
-.trip-body p {
-  min-height: 52px;
-  margin: 0;
-  color: var(--muted);
-  font-size: .78rem;
-}
-
-.trip-price {
-  margin-top: 14px;
-  color: var(--navy);
-  font-size: .76rem;
-  font-weight: 900;
-  line-height: 1.45;
-}
-
-.trip-price small {
-  font-weight: 600;
-  color: var(--muted);
-}
-
-.trip-link {
-  display: inline-block;
-  margin-top: 16px;
-  color: var(--navy);
-  font-size: .67rem;
-  font-weight: 900;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.trip-link:hover {
-  color: var(--orange);
-}
-
-.trip-card.sold-out {
-  border-color: rgba(6,31,70,.2);
-}
-
-/* ============================================================
-   MOBILE ADAPTATION OF THE MASTER — NOT A NEW DESIGN
-   ============================================================ */
-
-@media (max-width: 1050px) {
-  .hero-inner {
-    grid-template-columns: minmax(0,1fr) minmax(340px,.72fr);
-    gap: 35px;
-  }
-
-  .trips-grid {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-  }
-}
-
-@media (max-width: 760px) {
-  .hero-inner {
-    display: block;
-    min-height: auto;
-    padding: 65px 0 70px;
-  }
-
-  .hero-copy h1 {
-    font-size: clamp(3rem,14vw,4.6rem);
-  }
-
-  .hero-visual {
-    min-height: auto;
-    margin-top: 36px;
-    padding: 0 0 42px;
-  }
-
-  .hero-photo {
-    height: 480px;
-  }
-
-  .hero-card {
-    right: 8px;
-  }
-
-  .trips-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .trip-body p {
-    min-height: auto;
-  }
 }
 
 </style>
@@ -1577,58 +1325,99 @@ select {
 
 <main>
 
+
 <section class="hero" id="home">
-  <div class="hero-background" aria-hidden="true"></div>
+
+  <div class="hero-bg"></div>
 
   <div class="container hero-inner">
+
     <div class="hero-copy">
-      <div class="eyebrow">Every Journey Begins Together</div>
+
+      <span class="eyebrow">
+        Every Journey Begins Together
+      </span>
 
       <h1>
-        Travel Better.<br>
+        Travel Better.
         <em>Travel Together.</em>
       </h1>
 
       <p>
-        Travel has always been more than a vacation to us. It is an
-        opportunity to experience the beauty, diversity, and wonder of
-        God's creation—and to share those moments with the people who
-        matter most.
+        Travel has always been more than a vacation to us.
+        It is an opportunity to experience the beauty, diversity,
+        and wonder of God's creation—and to share those moments
+        with the people who matter most.
       </p>
 
-      <div class="hero-buttons">
-        <a class="button primary" href="#contact">Start Planning</a>
-        <a class="button outline" href="#trips">Explore 2027 Trips</a>
+      <div class="actions">
+
+        <a
+          class="btn btn-primary"
+          href="#contact"
+        >
+          Start Planning
+        </a>
+
+        <a
+          class="btn btn-light"
+          href="#trips"
+        >
+          Explore 2027 Trips
+        </a>
+
       </div>
 
-      <div class="hero-message">
-        Family reunions. Couples' getaways. Destination weddings.
-        Church retreats. Group cruises. Special celebrations.
-        <strong>Whatever the journey, Huddle Up.</strong>
+      <div class="hero-note">
+
+        Family reunions. Couples' getaways.
+        Destination weddings. Church retreats.
+        Group cruises. Special celebrations.
+
+        <strong>
+          Whatever the journey, Huddle Up.
+        </strong>
+
       </div>
+
     </div>
+
 
     <div class="hero-visual">
-      <div class="hero-photo">
-        <img src="images/nick-hero.png"
-             alt="Huddle Up N Travel featured travel experience">
-      </div>
+
+      <!-- IMPORTANT:
+           This is the only foreground client image.
+           The background is Negril destination photography.
+      -->
+
+      <img
+        src="images/nick-hero.png"
+        alt="Huddle Up N Travel featured travel experience"
+      >
 
       <div class="hero-card">
-        <span class="hero-card-label">The Huddle Up Way</span>
-        <strong>Bring your people.<br>Choose your destination.</strong>
+
+        <small>
+          Let's travel together
+        </small>
+
+        <strong>
+          Bring your people.<br>
+          Choose your destination.
+        </strong>
+
         <p>
-          Thoughtful planning, beautiful places, and memories worth
-          gathering for.
+          Thoughtful planning, beautiful places,
+          and memories worth gathering for.
         </p>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
-
-
-
-
 
 
 <section class="quick">
@@ -1993,7 +1782,131 @@ select {
 </section>
 
 
+<section
+  class="section"
+  id="trips"
+>
 
+  <div class="container">
+
+    <div class="section-head">
+
+      <span class="eyebrow">
+        2027 journeys
+      </span>
+
+      <h2>
+        Trips worth gathering for.
+      </h2>
+
+      <p>
+        Explore a few signature experiences and start
+        a conversation about the right fit for your group.
+      </p>
+
+    </div>
+
+
+    <div class="trips-grid">
+
+      <article class="trip">
+
+        <img
+          src="images/Caribbean Cruise.png"
+          alt="Caribbean cruise"
+        >
+
+        <div class="trip-body">
+
+          <small>
+            2027 Signature
+          </small>
+
+          <h3>
+            Caribbean Cruise
+          </h3>
+
+          <p>
+            A relaxed group sailing with sunshine,
+            dining, entertainment, and plenty of
+            time together.
+          </p>
+
+          <a href="#contact">
+            Ask about this trip →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article class="trip">
+
+        <img
+          src="images/Valiant Lady.png"
+          alt="Valiant Lady cruise"
+        >
+
+        <div class="trip-body">
+
+          <small>
+            2027 Signature
+          </small>
+
+          <h3>
+            Valiant Lady
+          </h3>
+
+          <p>
+            A stylish sea escape for groups who want
+            something modern, social, and memorable.
+          </p>
+
+          <a href="#contact">
+            Ask about this trip →
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <article class="trip">
+
+        <img
+          src="images/Paris.png"
+          alt="Paris travel"
+        >
+
+        <div class="trip-body">
+
+          <small>
+            Custom Journey
+          </small>
+
+          <h3>
+            Paris & Beyond
+          </h3>
+
+          <p>
+            Build a custom European experience around
+            your group's pace, interests, and celebrations.
+          </p>
+
+          <a href="#contact">
+            Start a custom trip →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 <section
@@ -2073,148 +1986,6 @@ select {
 
 </section>
 
-
-
-<section class="section cream" id="trips">
-  <div class="container">
-
-    <div class="heading">
-      <span class="eyebrow">2027 Journeys</span>
-      <h2>Trips worth gathering for.</h2>
-      <p>
-        Six distinct experiences, thoughtfully selected for travelers
-        who want to go together.
-      </p>
-    </div>
-
-    <div class="trips-grid">
-
-      <article class="trip-card">
-        <div class="trip-image">
-          <img src="images/Paris.png" alt="Paris">
-          <span class="trip-status">Available</span>
-        </div>
-        <div class="trip-body">
-          <span class="trip-date">April 15–20, 2027</span>
-          <h3>Paris</h3>
-          <p>
-            Five nights in Paris with the Huddle Up group.
-          </p>
-          <div class="trip-price">
-            $1,800 <small>• $300 deposit</small>
-          </div>
-          <a href="#contact" class="trip-link">
-            Ask about Paris →
-          </a>
-        </div>
-      </article>
-
-      <article class="trip-card">
-        <div class="trip-image">
-          <img src="images/Amsterdam.png" alt="Amsterdam">
-          <span class="trip-status">Available</span>
-        </div>
-        <div class="trip-body">
-          <span class="trip-date">April 20–23, 2027</span>
-          <h3>Amsterdam Extension</h3>
-          <p>
-            Extend the spring journey with an Amsterdam stay.
-          </p>
-          <div class="trip-price">
-            $1,300 <small>• $250 deposit</small>
-          </div>
-          <a href="#contact" class="trip-link">
-            Ask about Amsterdam →
-          </a>
-        </div>
-      </article>
-
-      <article class="trip-card">
-        <div class="trip-image">
-          <img src="images/Ocho Rios.png" alt="Ocho Rios Jamaica">
-          <span class="trip-status">Available</span>
-        </div>
-        <div class="trip-body">
-          <span class="trip-date">July 2–5 or July 3–7, 2027</span>
-          <h3>Jamaica — Sandals Ochi</h3>
-          <p>
-            An Ocho Rios all-inclusive group escape at Sandals Ochi.
-          </p>
-          <div class="trip-price">
-            $1,851.91 or $2,699.40 per room
-            <small>• $250 deposit</small>
-          </div>
-          <a href="#contact" class="trip-link">
-            Ask about Jamaica →
-          </a>
-        </div>
-      </article>
-
-      <article class="trip-card">
-        <div class="trip-image">
-          <img src="images/Valiant Lady.png" alt="Valiant Lady">
-          <span class="trip-status">Available</span>
-        </div>
-        <div class="trip-body">
-          <span class="trip-date">July 1–5, 2027</span>
-          <h3>Valiant Lady — 4th of July</h3>
-          <p>
-            Friends & Family sailing featuring Key West and Bimini.
-          </p>
-          <div class="trip-price">
-            $2,189 per room for 2
-            <small>• $338 deposit</small>
-          </div>
-          <a href="#contact" class="trip-link">
-            Ask about Valiant Lady →
-          </a>
-        </div>
-      </article>
-
-      <article class="trip-card">
-        <div class="trip-image">
-          <img src="images/Caribbean Cruise.png" alt="Caribbean cruise">
-          <span class="trip-status">Available</span>
-        </div>
-        <div class="trip-body">
-          <span class="trip-date">July 31–August 7, 2027</span>
-          <h3>Grandeur of the Seas</h3>
-          <p>
-            A Southern Caribbean sailing from San Juan with the group.
-          </p>
-          <div class="trip-price">
-            From $909 pp double occupancy
-            <small>• $250 deposit</small>
-          </div>
-          <a href="#contact" class="trip-link">
-            Ask about the cruise →
-          </a>
-        </div>
-      </article>
-
-      <article class="trip-card sold-out">
-        <div class="trip-image">
-          <img src="images/Japan.png" alt="Japan">
-          <span class="trip-status sold">Sold Out</span>
-        </div>
-        <div class="trip-body">
-          <span class="trip-date">August 20–30, 2027</span>
-          <h3>Japan — Exclusive Trip</h3>
-          <p>
-            Our exclusive Japan experience is currently full.
-          </p>
-          <div class="trip-price">
-            $2,999 <small>• $400 deposit</small>
-          </div>
-          <a href="#contact" class="trip-link">
-            Join the waitlist →
-          </a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
 
 </main>
 
